@@ -1,4 +1,6 @@
-const SomeComponent = ({ message }: { message: string }) => {
+import IPeriodToggleBtn from "./components/PeriodToggleBtn"
+
+export const SomeComponent = ({ message }: { message: string }) => {
     const showMessage = message || "No message"
 
     return (
@@ -6,4 +8,4 @@ const SomeComponent = ({ message }: { message: string }) => {
     )
 }
 
-export default SomeComponent;
+export const PeriodToggleBtn = IPeriodToggleBtn
