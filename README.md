@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# React Simple Resource Scheduler
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the React Simple Resource Scheduler! This project is an open-source npm package designed to help you easily create and manage a resource scheduler in your React applications. Whether you're mapping resources, scheduling jobs, or managing calendar events, this package provides a simple and intuitive interface to streamline the process.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Easy Integration**: Seamlessly integrate the scheduler into your existing React application.
+- **Resource Mapping**: Map and manage various resources with ease.
+- **Job Scheduling**: Schedule, update, and manage jobs for each resource.
+- **Customizable**: Tailor the look and feel to match your application's design.
+- **Responsive Design**: Fully responsive and mobile-friendly.
+- **Event Handling**: Comprehensive event handling for various scheduler actions.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To install the React Simple Resource Scheduler, you can use npm or yarn:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install react-simple-resource-scheduler
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with a descriptive name.
+3. Make your changes and commit them with clear and concise messages.
+4. Push your changes to your forked repository.
+5. Create a pull request to the main repository.
+
+Please ensure your code follows the project's coding standards and passes all tests.

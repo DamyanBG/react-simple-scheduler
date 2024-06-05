@@ -1,6 +1,6 @@
 import { DateTime } from "luxon"
 
-import { Period } from "./types";
+import { Period, ResourcesWithFrames } from "./types";
 
 export interface PeriodToggleBtnProps {
     periodType: Period;
@@ -20,12 +20,60 @@ export interface HeaderProps {
 }
 
 export interface TimeFrameProps {
-    id: string;
-    handleDragEnd: ;
-    handleDragStart: ;
-    startTime: ;
-    endTime: ;
-    index: ;
-    frameText: ;
-    frameType: ;
+    id: string | number;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    startTime: number;
+    endTime: number;
+    index:number ;
+    frameText: string;
+}
+
+export interface WeekDaysFrameProps {
+    id: string | number;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    startDateWeekdayNum: number;
+    endDateWeekdayNum: number;
+    index:number ;
+    frameText: string;
+}
+
+export interface MonthDaysFrameProps {
+    id: string | number;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    startDate: number;
+    endDate: number;
+    index:number ;
+    frameText: string;
+}
+
+export interface BodyProps {
+    resourcesWithFrames: ResourcesWithFrames;
+    currentDate: DateTime;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDrop: (i: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+}
+
+export interface BodyFactoryProps {
+    periodType: Period;
+    resourcesWithFrames: ResourcesWithFrames;
+    currentDate: DateTime;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDrop: (i: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+}
+
+export interface SchedulerProps {
+    currentDate: DateTime;
+    periodType: Period;
+    handleDateChange: (newDate: DateTime) => void;
+    handlePeriodTypeChange: (newPeriod: Period) => void;
+    gridTemplateColumnsValue: string;
+    resourcesWithFrames: ResourcesWithFrames;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDrop: (i: number) => (e: React.DragEvent<HTMLDivElement>) => void;
 }
