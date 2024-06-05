@@ -5,8 +5,6 @@ import DateSelect from "./DateSelect";
 import Header from "./Header";
 import PeriodToggleBtn from "./PeriodToggleBtn";
 
-import "./scheduler.css"
-
 const Scheduler = ({
     currentDate,
     periodType,
