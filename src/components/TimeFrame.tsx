@@ -1,4 +1,6 @@
-const FullFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText }) => {
+import { HourlyTimeFrameFactoryProps, FullHourlyTimeFrameProps, EndHourlyTimeFrameProps, StartHourlyTimeFrameProps } from "../types/components";
+
+const FullFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText }: FullHourlyTimeFrameProps) => {
     const frames = endTime - startTime;
 
     return (
@@ -24,7 +26,7 @@ const FullFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, ind
     );
 };
 
-const StartFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText }) => {
+const StartFrame = ({ id, handleDragEnd, handleDragStart, endTime, index, frameText }: StartHourlyTimeFrameProps) => {
     const frames = endTime;
     console.log(frames);
 
@@ -51,7 +53,7 @@ const StartFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, in
     );
 };
 
-const EndFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText }) => {
+const EndFrame = ({ id, handleDragEnd, handleDragStart, startTime, index, frameText }: EndHourlyTimeFrameProps) => {
     const frames = 24 - startTime;
 
     return (
@@ -77,21 +79,44 @@ const EndFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, inde
     );
 };
 
-const TimeFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText, frameType }) => {
-    const TimeFrameComponent = frameType === "full" ? FullFrame : frameType === "start" ? StartFrame : EndFrame;
+const HourlyTimeFrame = ({ id, handleDragEnd, handleDragStart, startTime, endTime, index, frameText, frameType }: HourlyTimeFrameFactoryProps) => {
+    if (frameType === "full") {
+        return (
+            <FullFrame
+                id={id}
+                handleDragEnd={handleDragEnd}
+                handleDragStart={handleDragStart}
+                startTime={startTime}
+                endTime={endTime}
+                index={index}
+                frameText={frameText}
+            />
+        )
+    }
+
+    if (frameType === "start") {
+        return (
+            <StartFrame
+                id={id}
+                handleDragEnd={handleDragEnd}
+                handleDragStart={handleDragStart}
+                endTime={endTime}
+                index={index}
+                frameText={frameText}
+            />
+        )
+    }
 
     return (
-        <TimeFrameComponent
+        <EndFrame
             id={id}
             handleDragEnd={handleDragEnd}
             handleDragStart={handleDragStart}
             startTime={startTime}
-            endTime={endTime}
             index={index}
             frameText={frameText}
-            frameType={frameType}
         />
-    );
+    )
 };
 
-export default TimeFrame
+export default HourlyTimeFrame

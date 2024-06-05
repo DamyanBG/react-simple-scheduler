@@ -19,34 +19,39 @@ export interface HeaderProps {
     periodType: Period;
 }
 
-export interface TimeFrameProps {
+export interface TimeFramePropsAbs {
     id: string | number;
-    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+    index: number;
+    frameText: string;
     handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
+}
+
+export interface FullHourlyTimeFrameProps extends TimeFramePropsAbs {
     startTime: number;
     endTime: number;
-    index:number ;
-    frameText: string;
 }
 
-export interface WeekDaysFrameProps {
-    id: string | number;
-    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
-    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+export interface StartHourlyTimeFrameProps extends TimeFramePropsAbs {
+    endTime: number;
+}
+
+export interface EndHourlyTimeFrameProps extends TimeFramePropsAbs {
+    startTime: number;
+}
+
+export interface HourlyTimeFrameFactoryProps extends FullHourlyTimeFrameProps {
+    frameType: string;
+}
+
+export interface WeekDaysFrameProps extends TimeFramePropsAbs {
     startDateWeekdayNum: number;
     endDateWeekdayNum: number;
-    index:number ;
-    frameText: string;
 }
 
-export interface MonthDaysFrameProps {
-    id: string | number;
-    handleDragEnd: (e: React.DragEvent<HTMLDivElement>) => void;
-    handleDragStart: (meetingId: string | number, frames: number) => (e: React.DragEvent<HTMLDivElement>) => void;
+export interface MonthDaysFrameProps extends TimeFramePropsAbs {
     startDate: number;
     endDate: number;
-    index:number ;
-    frameText: string;
 }
 
 export interface BodyProps {

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { DateTime } from "luxon"
 
-import TimeFrame from "./TimeFrame";
+import HourlyTimeFrame from "./TimeFrame";
 import { BodyFactoryProps, BodyProps, MonthDaysFrameProps, WeekDaysFrameProps } from "../types/components";
 import { PeriodTypeEnum } from "../types/types";
 
@@ -94,7 +94,7 @@ const HoursBody = ({
                         const frameType =
                             isStartTimeInPeriod && isEndTimeInPeriod ? "full" : isStartTimeInPeriod ? "end" : "start";
                         return (
-                            <TimeFrame
+                            <HourlyTimeFrame
                                 key={timeFrame.id}
                                 id={timeFrame.id}
                                 handleDragEnd={handleDragEnd}
