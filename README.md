@@ -8,7 +8,6 @@ Welcome to the React Simple Resource Scheduler! This project is an open-source n
 - **Resource Mapping**: Map and manage various resources with ease.
 - **Job Scheduling**: Schedule, update, and manage jobs for each resource.
 - **Customizable**: Tailor the look and feel to match your application's design.
-- **Responsive Design**: Fully responsive and mobile-friendly.
 - **Event Handling**: Comprehensive event handling for various scheduler actions.
 
 ## Installation
